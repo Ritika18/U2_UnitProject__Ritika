@@ -1,6 +1,9 @@
+int Score1 = 0;
+int Score2 = 0;
+
 Snake snake;
-Snake snake2;
 Ball ball;
+Snake snake2;
 
 void setup ()
 {
@@ -13,6 +16,8 @@ void setup ()
 
 void draw()
 {  
+  Score();
+    
   background(0);
   fill(255);
   
@@ -30,11 +35,28 @@ void draw()
   {
     ball.circleX2();
     ball.circleY2();
+    Score1 = Score1 + 5;
   }
   
   if(dist (ball.circleXX(), ball.circleYY(), snake.rectX2(), snake.rectY2()) < 25)
   {
     ball.circleX22();
     ball.circleY22();
+    Score2 = Score2 + 5;
   }
+}
+
+void Score()
+{
+  fill(255);
+  rect(15,15,100,35);
+  fill(0,230,230);
+  textSize(32);
+  text(Score1,20,45);
+  
+  fill(0);
+  rect(585,15,100,35);
+  fill(225);
+  textSize(32);
+  text(Score2,20,45);
 }
