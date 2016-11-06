@@ -1,5 +1,7 @@
+//creating a class
 class Snake
 {
+  //creating variables for the class -- Encapsulation
   private float _size;
 
   private PVector _rectanglePosition1;
@@ -10,6 +12,7 @@ class Snake
   private boolean _y1;
   private boolean _y2;
   
+  //constructor
   Snake (float size, PVector rectanglePosition1, PVector rectanglePosition2, boolean x1, boolean x2, boolean y1, boolean y2)
   {
     _size = size;
@@ -22,6 +25,7 @@ class Snake
     _y2 = y2;
   }
   
+  //telling the first snake to move when keys -asdw- are pressed
   public void Move()
   {
      if(_x1 == true)
@@ -80,6 +84,7 @@ class Snake
     }
   }
   
+  //telling the second snake to move when keys -jkli- are pressed
   public void Move2()
   {
      if(_x1 == true)
@@ -139,6 +144,7 @@ class Snake
     }
   }
   
+  //telling both snakes to not go off the screen -- boundaries
   public void Boundaries()
   {
      if(_rectanglePosition1.x > width)
@@ -182,6 +188,7 @@ class Snake
       }
   }
   
+  //drawing the snakes on the screen
   public void Draw()
   {
     fill(20,130,200);
@@ -191,22 +198,25 @@ class Snake
     rect(_rectanglePosition2.x, _rectanglePosition2.y, _size+3, _size+3);
   }
 
-  
+  //transfering the position for collision code
   public float rectX()
   {
     return _rectanglePosition1.x;
   }
-  
+
+  //transfering the position for collision code
   public float rectX2()
   {
     return _rectanglePosition2.x;
   }
-  
+ 
+  //transfering the position for collision code  
   public float rectY()
   {
     return _rectanglePosition1.y;
   }
   
+  //transfering the position for collision code
   public float rectY2()
   {
     return _rectanglePosition2.y;
